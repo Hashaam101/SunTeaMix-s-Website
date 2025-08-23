@@ -15,7 +15,7 @@ import LocationComponent from "@/components/OurLocation";
 import Featuring from "@/components/featuring";
 import { useEffect, useRef, useState } from "react";
 // import SubscriptionPopup, { PopupConfig } from '../components/SubscriptionPopup'; // Import new popup and config type
-import Logo from "@/assets/Images/logo.webp";
+import Logo from "@/assets/Images/Logo.webp";
 import InstagramCarousel from "@/components/InstagramCarousel";
 import Story from "@/components/Story";
 
