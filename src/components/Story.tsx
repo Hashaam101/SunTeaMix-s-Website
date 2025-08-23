@@ -2,8 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 
-
-import family_tradition from "@/../public/Images/family tradition.webp";
 import Link from 'next/link';
 
 
@@ -30,7 +28,7 @@ function Story() {
     >
       <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
         <Image
-          src={family_tradition} // Family Tradition Image
+          src="Images/hero.webp"
           alt="Story about the best Restaurant in Honolulu, Hawaii." // Changed alt text
           width={540} height={540}
           className='block lg:hidden aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
@@ -51,7 +49,7 @@ function Story() {
           </div>
         </div>
         <Image
-          src={family_tradition} // Family Tradition Image
+          src="Images/hero.webp"
           alt="Story about the best Restaurant in Honolulu, Hawaii." // Changed alt text
           width={540} height={540}
           className='hidden lg:block aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'

@@ -15,7 +15,7 @@ import LocationComponent from "@/components/OurLocation";
 import Featuring from "@/components/featuring";
 import { useEffect, useRef, useState } from "react";
 // import SubscriptionPopup, { PopupConfig } from '../components/SubscriptionPopup'; // Import new popup and config type
-import Logo from "@/../public/Images/logo.webp";
+import Logo from "@/assets/Images/logo.webp";
 import InstagramCarousel from "@/components/InstagramCarousel";
 import Story from "@/components/Story";
 
@@ -69,7 +69,7 @@ export default function Home() {
           <div className="absolute bg-black/20 top-0 left-0 w-full h-full object-cover rounded-[36px] -z-9" />
           <div className="absolute top-0 left-0 w-full h-full object-cover rounded-[36px] -z-9"
             style={{
-              background: "linear-gradient(59deg, rgb(13 13 13 / 30%) 20%, rgb(13 13 13 / 20%) 40%, rgb(13 13 13 / 15%) 60%, rgba(0, 0, 0, 0) 100%);",
+              background: "linear-gradient(59deg, rgb(13 13 13 / 30%) 20%, rgb(13 13 13 / 20%) 40%, rgb(13 13 13 / 15%) 60%, rgba(0, 0, 0, 0) 100%)"
             }}
           />
         </div>

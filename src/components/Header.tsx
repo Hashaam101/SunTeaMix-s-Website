@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { AnimatedCTAButton } from './CTA_header_btn'
-import logo from "@/../public/Images/logo.webp"
+import logo from "@/assets/Images/logo.webp"
 import Image from 'next/image';
 import { AnimatedMenuButton } from './Menu_Header_btn';
 import { usePathname, useRouter } from 'next/navigation';

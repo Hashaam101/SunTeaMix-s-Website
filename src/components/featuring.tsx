@@ -4,10 +4,6 @@ import React from 'react'; // Import React
 import Image, { StaticImageData } from 'next/image'; // Import StaticImageData if needed for type safety
 import { motion } from 'framer-motion'; // Import motion
 
-// Import your images (ensure paths are correct)
-import beef_noodle_soup from "@/../public/Images/Beef noodle soup.webp";
-
-
 
 // Define animation variants for consistency
 const sectionVariants = {
@@ -86,8 +82,8 @@ function Featuring() {
       >
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           <Image
-            src="https://pixel.menusifu.com/674a336c694d346a53507453652b6d614b742b7345673d3d/o_popcornchicken.png"
-            alt="Best Popcorn Chicken in Honolulu"
+            src="Images/hero.webp"
+            alt="Best Bubble Tea & Boba Drinks in Honolulu"
             width={540} height={540} priority // Add priority if visible early
             className='aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
           />
@@ -113,8 +109,8 @@ function Featuring() {
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           {/* Image shown first on mobile */}
           <Image
-            src="https://pixel.menusifu.com/674a336c694d346a53507453652b6d614b742b7345673d3d/20250212083624318Wosh.jpg"
-            alt="Best Dumplings in Honolulu, Hawaii."
+            src="Images/hero.webp"
+            alt="Best Soufflé Pancakes in Honolulu, Hawaii."
             width={540} height={540}
             className='block lg:hidden aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
 
@@ -128,8 +124,8 @@ function Featuring() {
             </div>
           </div>
           <Image
-            src="https://pixel.menusifu.com/674a336c694d346a53507453652b6d614b742b7345673d3d/20250212083624318Wosh.jpg"
-            alt="Best Dumplings in Honolulu, Hawaii."
+            src="Images/hero.webp"
+            alt="Best Soufflé Pancakes in Honolulu, Hawaii."
             width={540} height={540}
             className='hidden lg:block aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
 
@@ -147,8 +143,8 @@ function Featuring() {
       >
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           <Image
-            src={beef_noodle_soup}
-            alt="best beef noodle soup in Honolulu, Hawaii."
+            src="Images/hero.webp"
+            alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
             width={540} height={540} priority
             className='aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
           />
