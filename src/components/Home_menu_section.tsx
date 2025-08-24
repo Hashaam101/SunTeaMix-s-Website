@@ -1,7 +1,7 @@
 "use client";
 
 import { div } from 'framer-motion/client';
-import React, { useCallback, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 import Image from 'next/image';
 
@@ -130,13 +130,71 @@ export default function Home_menu_section() {
 				</div>
 			</div>
 
-            <div className='overflow-x-hidden h-fit flex justify-center'>
-				<ScrollableMenuCards
-            ref={scrollableMenuRef} 
-            menuItems={popularItems} 
-            onScrollEndChange={handleScrollEndChange} 
-				/>
-			</div>
+      <div className='overflow-x-hidden h-fit flex justify-center'>
+        <ScrollableMenuCards
+          ref={scrollableMenuRef}
+          menuItems={popularItems}
+          onScrollEndChange={handleScrollEndChange}
+        />
+      </div>
     </div>
 )
 }
+
+interface LocalScrollableMenuCardsProps {
+  menuItems: MenuItem[];
+  [key: string]: any;
+}
+
+const LocalScrollableMenuCards = ({ menuItems, ...props }: LocalScrollableMenuCardsProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    isDragging.current = true;
+    startX.current = e.pageX - (scrollContainerRef.current?.getBoundingClientRect().left || 0);
+    scrollLeft.current = scrollContainerRef.current?.scrollLeft || 0;
+    document.body.style.userSelect = "none";
+  };
+
+  const handleMouseLeave = () => {
+    isDragging.current = false;
+    document.body.style.userSelect = "";
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    document.body.style.userSelect = "";
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollContainerRef.current?.getBoundingClientRect().left || 0);
+    const walk = (x - startX.current) * 1; // scroll speed
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+    }
+  };
+
+  return (
+    <div
+      ref={scrollContainerRef}
+      className="flex overflow-x-auto gap-4 scrollbar-hide cursor-grab active:cursor-grabbing"
+      onMouseDown={handleMouseDown}
+      onMouseLeave={handleMouseLeave}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Render your menu items here */}
+      {menuItems.map(item => (
+        <div key={item.id} className="min-w-[200px]">{item.name}</div>
+      ))}
+    </div>
+  );
+};
+
+// Remove the export default for the local component

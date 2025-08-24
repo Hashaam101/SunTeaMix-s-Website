@@ -20,6 +20,9 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
     const [isAtEnd, setIsAtEnd] = useState(false);
     // Store the timeout ID to clear it if component unmounts during scroll debounce
     const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
 
     // --- Function to scroll to the next card or loop back ---
     const scrollNext = useCallback(() => {
@@ -110,54 +113,70 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
       </div> */}
 
       {/* Scrollable Cards Section */}
-      <div ref={scrollContainerRef} className="flex overflow-x-auto gap-4 scrollbar-hide">
+      <div
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto gap-4 scrollbar-hide cursor-grab active:cursor-grabbing"
+        onMouseDown={e => {
+          // Only start drag if not on selectable text
+          if ((e.target as HTMLElement).closest('.selectable-text')) return;
+          isDragging.current = true;
+          startX.current = e.pageX - (scrollContainerRef.current?.getBoundingClientRect().left || 0);
+          scrollLeft.current = scrollContainerRef.current?.scrollLeft || 0;
+          document.body.style.userSelect = "none";
+        }}
+        onMouseLeave={() => {
+          isDragging.current = false;
+          document.body.style.userSelect = "";
+        }}
+        onMouseUp={() => {
+          isDragging.current = false;
+          document.body.style.userSelect = "";
+        }}
+        onMouseMove={e => {
+          if (!isDragging.current) return;
+          e.preventDefault();
+          const x = e.pageX - (scrollContainerRef.current?.getBoundingClientRect().left || 0);
+          const walk = (x - startX.current) * 1;
+          if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+          }
+        }}
+      >
         {menuItems.map((item) => (
           <div 
             key={item.id} 
             className="w-[300px] sm:w-[386px] text-black rounded-[12px] overflow-hidden flex-shrink-0"
           >
             {/* Card Image */}
-            <div className="relative h-[240px] w-full">
+            <div className="relative h-[240px] w-full cursor-grab active:cursor-grabbing">
               <Image 
                 src={item.image}
                 alt={item.name}
                 fill
                 className="object-cover"
+                draggable={false}
               />
             </div>
 
             {/* Card Content */}
             <div className="mt-[-12px] z-10 relative bg-white rounded-[12px] pb-[12px] px-[16px]">
-              <div className="text-h5 font-bold py-3">{item.name}</div>
-              <div className="text-normal4 text-black/60">{item.description}</div>
-              
+              <div className="text-h5 font-bold py-3 selectable-text" style={{ cursor: "text", userSelect: "text" }}>{item.name}</div>
+              <div className="text-normal4 text-black/60 selectable-text" style={{ cursor: "text", userSelect: "text" }}>{item.description}</div>
               {/* Price and Points */}
               <div className="flex mt-1 items-center pb-3">
-                <span className="text-normal4 text-primary-dark font-bold">$ {item.price}</span>
-                {/* <div className='h-1 w-1 bg-black/40 rounded-full m-[6.5px]'></div> */}
-                
-                {/* { item.priceL && item.priceL > 0 && item.priceM !== item.priceL &&
-                  <>
-                    <span className="text-normal4 text-primary-dark font-bold">$ {item.priceL.toFixed(2)}</span>
-                    <div className='h-1 w-1 bg-black/40 rounded-full m-[6.5px]'/>
-                  </>
-                } */}
-                {/* <span className="text-normal4 text-primary items-center">+ {item.loyaltyPoints} points</span> */}
+                <span className="text-normal4 text-primary-dark font-bold selectable-text" style={{ cursor: "text", userSelect: "text" }}>$ {item.price}</span>
               </div>
-              
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mt-3">
-                {item.tags.map((tag, idx) => {
-                 
-                  return (
-                    <span 
-                      key={idx} 
-                      className={`text-normal4 px-[12px] py-[3px] rounded-full bg-black/[0.03] text-black/50`}
-                    >
-                      {tag}
-                    </span>
-                  );
-                })}
+                {item.tags.map((tag, idx) => (
+                  <span 
+                    key={idx} 
+                    className={`text-normal4 px-[12px] py-[3px] rounded-full bg-black/[0.03] text-black/50 selectable-text`}
+                    style={{ cursor: "text", userSelect: "text" }}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

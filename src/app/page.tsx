@@ -3,12 +3,12 @@
 import Header from "@/components/Header";
 import Image from "next/image";
 
-import placeholderImg from "@/../public/Images/Product img 1.png";
 import Hero from "@/../public/Images/hero.webp";
 
 import ThemeButton from "@/components/ThemeBtn";
 import Home_menu_section from "@/components/Home_menu_section";
 import PromotionalBanner from "@/components/Home_promotional_banner";
+import InstagramComponent from "@/components/InstagramComponent";
 import Reviews from "@/components/Reviews";
 import FAQSection from "@/components/FAQ_section";
 import LocationComponent from "@/components/OurLocation";
@@ -16,18 +16,17 @@ import Featuring from "@/components/featuring";
 import { useEffect, useRef, useState } from "react";
 // import SubscriptionPopup, { PopupConfig } from '../components/SubscriptionPopup'; // Import new popup and config type
 import Logo from "@/assets/Images/Logo.webp";
-import InstagramCarousel from "@/components/InstagramCarousel";
 import Story from "@/components/Story";
 
 
 export default function Home() {
 
-  const videoSrc = `/vids/seasons.mp4`;
-  let videoType: string | undefined;
-  const extension = videoSrc.split('.').pop()?.toLowerCase();
-  if (extension === 'mp4') videoType = 'video/mp4';
-  else if (extension === 'webm') videoType = 'video/webm';
-  else if (extension === 'ogv' || extension === 'ogg') videoType = 'video/ogg';
+  // const videoSrc = `/vids/seasons.mp4`;
+  // let videoType: string | undefined;
+  // const extension = videoSrc.split('.').pop()?.toLowerCase();
+  // if (extension === 'mp4') videoType = 'video/mp4';
+  // else if (extension === 'webm') videoType = 'video/webm';
+  // else if (extension === 'ogv' || extension === 'ogg') videoType = 'video/ogg';
 
 
   const scrollToSection = (sectionId: string) => {
@@ -104,7 +103,7 @@ export default function Home() {
             iconColor="text-primary"
             iconHoverColor="text-primary-dark"
 
-            href="https://m.yelp.com/reservations/seasons-taiwanese-eatery-honolulu?covers=2&date=2025-05-20&source=yelp_biz&time=1900 "
+            href="https://www.clover.com/online-ordering/sun-tea-mix-honolulu"
           />
 
         </div>
@@ -118,20 +117,12 @@ export default function Home() {
         <Home_menu_section />
       </div>
 
+
       <div className="h-[100px]" />
 
       {/* Instagram Section */}
-      <InstagramCarousel
-        postUrls={[
-          "https://www.instagram.com/p/DIpjFMtzKf4/",
-          "https://www.instagram.com/p/DEExGa4xiug/",
-          "https://www.instagram.com/p/DFyS9spyJfm/",
-          "https://www.instagram.com/p/DI5YJTloLvP",
+      <InstagramComponent />
 
-        ]}
-      />
-
-      <div className="h-[100px]" />
 
       {/* promotion banner */}
       {/* <div>
@@ -145,6 +136,8 @@ export default function Home() {
       </div>
 
       <div className="h-[100px]" /> */}
+
+      <div className="h-[100px]" />
 
       {/* reviews */}
       <div id="Reviews">
@@ -303,6 +296,8 @@ export default function Home() {
 
           </div>
         </div>
+
+        <div className="h-[60px]" />
 
         {/* Bottom Bar */}
         <div className="bg-primary rounded-full text-white w-[90%] mx-auto min-h-[37px] py-[10px] sm:px-[50px] md:px-[100px]">

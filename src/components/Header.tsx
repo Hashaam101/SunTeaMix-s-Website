@@ -63,7 +63,7 @@ function Header( {onClick} : {onClick: () => void}) {
         <div className={`flex justify-start md:justify-center`}>
             <div
             className="relative text-white cursor-pointer"
-            onClick={() => router.push("/")}
+            onClick={() => { window.location.pathname = "/"; }}
             >
             <span
               className="absolute inset-0 rounded-full border-[0.5px]"
@@ -85,7 +85,7 @@ function Header( {onClick} : {onClick: () => void}) {
 
         {/* Right Section */}
         <div className="flex justify-end w-full">
-            <AnimatedCTAButton onRedirectClick={onClick} onBlogClick={() => {router.push("/Instagram")}}/>
+            <AnimatedCTAButton onRightBtnClick={onClick} onLeftBtnClick={() => {router.push("tel:+1(808)219-5749")}}/>
         </div>
       </div>
     </div>

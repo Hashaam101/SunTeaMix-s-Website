@@ -51,23 +51,26 @@ const Reviews = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <ReviewCard
                         starCount={5}
-                        reviewText="Third time visiting here this year (first time in the new location) and we absolutely love it! The food is authentic and homey! Just like what I can get at home in Taiwan."
-                        reviewerName="April Chu"
-                        profileImage="https://lh3.googleusercontent.com/a-/ALV-UjUi1p4TdiHVTA7mNDjsqpvNxhv0Is_F9GXP77WcG1ZLi5Kc2Hrw=s64-c-rp-mo-ba2-br100"
-                    />
-
-                    <ReviewCard
-                        starCount={4}
-                        reviewText="This place tasted like home! I could NOT recommend it enough. I've been searching so long for a great Taiwanese spot in town and this is gonna be the one. "
-                        reviewerName="Jhonny B."
-                        profileImage="https://lh3.googleusercontent.com/a-/ALV-UjUS07sVOCdDJIYcbP7-Tsz4RF6rudORo5JwZqSEQ7gadZxxmyJW=s64-c-rp-mo-ba3-br100"
+                        reviewText="Decent soufflé pancakes! The portion size is perfect for a snack (two pancakes stacked on top of each other). The batter was a tad bit dense to my liking, but still tasted pretty good!"
+                        reviewerName="Annabelle"
+                        redirect="https://share.google/YdqJhukpUi5VXdjk6"
+                        profileImage="https://lh3.googleusercontent.com/a-/ALV-UjUs9lwlKXd1-__EZbxkXZtNOrgwZIEcO9vqV1Us_QGyNPwUChik=s64-c-rp-mo-ba4-br100"
                     />
 
                     <ReviewCard
                         starCount={5}
-                        reviewText="This place did not disappoint!!!! Since I came right at opening, got to meet the owner and mind master of the operations. "
-                        reviewerName="Dianna Kuo"
-                        profileImage="https://lh3.googleusercontent.com/a/ACg8ocJ5Q7OoufyEXbaXvBj19D0zYa0QkSGpKSIncicmQY-GOH84Dw=s64-c-rp-mo-ba3-br100"
+                        reviewText="Cute place that we happened to stop by on a Monday afternoon around 4:30 pm. They have a nice dining area with games, plenty of outlets, and wifi. The tea came out quickly..."
+                        reviewerName="David Yoshihara"
+                        redirect='https://share.google/w5GAVS5ef4PdGoGpK'
+                        profileImage="https://lh3.googleusercontent.com/a/ACg8ocJ89b1vjJCWGQDcclijv6oKsiXEt0pTEiur-NBQ5cjRbZ-6oA=s64-c-rp-mo-ba5-br100"
+                    />
+
+                    <ReviewCard
+                        starCount={5}
+                        reviewText="Best place in Honolulu to have a cup of tea. The interior is really aesthetic and calm. The place is really suitable if you want to work/study as it remains quite mostly..."
+                        reviewerName="SK. Fazlee Rabby"
+                        redirect='https://share.google/2NkwLo0iD89kijQDY'
+                        profileImage="https://lh3.googleusercontent.com/a-/ALV-UjUor4h9s_b-YhMbEVE-lkZ2u1Orl3dJuIb2zcdnyjdMC2nsXk4=s64-c-rp-mo-ba3-br100"
                     />
                 </div>
 
@@ -81,8 +84,7 @@ const Reviews = () => {
                         iconBgHoverColor="bg-primary-dark/10"
                         iconColor="text-primary"
                         iconHoverColor="text-primary-dark"
-
-                        href="https://g.page/r/CQLXR1PKE02SEAI/review"
+                        href="https://search.google.com/local/writereview?placeid=ChIJLQAAcsZvAHwR5iFKGJjPSmk"
                     />
                 </div>
 
