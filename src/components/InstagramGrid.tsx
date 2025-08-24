@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BackgroundGradient } from "./ui/background-gradient";
 import { PostDescription } from "./PostDescription";
 
 interface InstagramPost {
