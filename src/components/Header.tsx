@@ -85,7 +85,10 @@ function Header( {onClick} : {onClick: () => void}) {
 
         {/* Right Section */}
         <div className="flex justify-end w-full">
-            <AnimatedCTAButton onRightBtnClick={onClick} onLeftBtnClick={() => {router.push("tel:+1(808)219-5749")}}/>
+            <AnimatedCTAButton 
+              buttonLeft={() => { router.push("tel:+1(808)219-5749") }}
+              buttonRight={() => { window.open("https://www.clover.com/online-ordering/sun-tea-mix-honolulu", "_blank") }}
+            />
         </div>
       </div>
     </div>

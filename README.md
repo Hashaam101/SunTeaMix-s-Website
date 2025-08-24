@@ -1,3 +1,23 @@
+# Sun Tea Mix Website
+
+This site was built for the client **Sun Tea Mix** using TableTurnerr's Client Site Structure & Design. It is a modern, responsive web app built with Next.js and Tailwind CSS.
+
+## Features & Sections
+
+- **Animated Header & Navigation**: Smooth navigation with animated buttons and section scrolling.
+- **Menu & Reviews**: Interactive menu cards, drag-to-scroll, and customer reviews.
+- **FAQ & Story**: Dynamic FAQ section and brand story.
+- **Location & Contact**: Easy access to location info and call-to-action buttons.
+- **Instagram Feed**: Displays recent Instagram posts and reels in a grid or carousel layout.
+
+## Instagram Feed Section
+
+For managing and displaying Instagram media, we recommend using the [Insta-Thumbnails-Importer](https://github.com/Hashaam101/Insta-Thumbnails-Importer) tool:
+
+> **Insta-Thumbnails-Importer** is a Python script for downloading Instagram post thumbnails as `.jpg` images and reels as `.gif` files (first 5 seconds, looped). It clears the output directory before each run, shows progress bars, and outputs a TypeScript file with post metadata for easy integration. No login required for public posts/reels.
+
+See the tool's repo for setup and usage instructions.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
