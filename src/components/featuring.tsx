@@ -1,8 +1,10 @@
+
 "use client";
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { motion } from 'framer-motion';
 import MediaPreloader from './MediaPreloader';
+
 // Animation variants for framer-motion
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -95,7 +97,7 @@ function Featuring() {
               className='w-full h-full object-cover rounded-[24px]'
             />
           </div>
-          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:ml-5'>
+          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pl-8'>
             <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
               Bubble Tea & Boba Drinks
             </div>
@@ -130,7 +132,7 @@ function Featuring() {
               className='w-full h-full object-cover rounded-[24px]'
             />
           </div>
-          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:mr-5'>
+          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pr-16'>
             <div className='self-stretch text-h3 xl:text-h2 lg:text-h2 text-black text-center lg:text-left'>
               Soufflé Pancakes
             </div>
@@ -178,7 +180,7 @@ function Featuring() {
               className='w-full h-full object-cover rounded-[24px]'
             />
           </div>
-          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:ml-5'>
+          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pl-8'>
             <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
               Smoothies & Yogurt Blends
             </div>
@@ -242,7 +244,7 @@ function Featuring() {
             width={540} height={540}
             className='block lg:hidden w-full h-auto shrink-0 rounded-[24px] object-cover'
           />
-          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:mr-5'>
+          <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pr-16'>
             <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
               Community
             </div>

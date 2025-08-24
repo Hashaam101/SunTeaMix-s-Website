@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
+
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
-    domains: ['pixel.menusifu.com', "lh3.googleusercontent.com"],
+    domains: ['lh3.googleusercontent.com', 'sun-tea-mix.vercel.app'],
     unoptimized: true,
   },
   trailingSlash: true,

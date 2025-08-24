@@ -1,11 +1,10 @@
 "use client";
 
+import React from "react";
 import Header from "@/components/Header";
 import Image from "next/image";
 import MediaPreloader from "@/components/MediaPreloader";
-
 import Hero from "@/../public/Images/hero.webp";
-
 import ThemeButton from "@/components/ThemeBtn";
 import Home_menu_section from "@/components/Home_menu_section";
 import PromotionalBanner from "@/components/Home_promotional_banner";
@@ -14,14 +13,11 @@ import Reviews from "@/components/Reviews";
 import FAQSection from "@/components/FAQ_section";
 import LocationComponent from "@/components/OurLocation";
 import Featuring from "@/components/featuring";
-import { useEffect, useRef, useState } from "react";
-// import SubscriptionPopup, { PopupConfig } from '../components/SubscriptionPopup'; // Import new popup and config type
 import Logo from "@/assets/Images/Logo.webp";
 import Story from "@/components/Story";
 
-
-export default function Home() {
-  const [heroLoaded, setHeroLoaded] = useState(false);
+const Home = React.memo(function Home() {
+  const [heroLoaded, setHeroLoaded] = React.useState(false);
 
   // const videoSrc = `/vids/seasons.mp4`;
   // let videoType: string | undefined;
@@ -30,6 +26,14 @@ export default function Home() {
   // else if (extension === 'webm') videoType = 'video/webm';
   // else if (extension === 'ogv' || extension === 'ogg') videoType = 'video/ogg';
 
+
+  React.useEffect(() => {
+    // Simple analytics: log page load
+    if (typeof window !== 'undefined') {
+      (window as any).__pageLoaded = true;
+      // You could send analytics here
+    }
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -303,4 +307,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+});
+
+export default Home;
