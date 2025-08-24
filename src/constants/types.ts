@@ -1,3 +1,8 @@
+declare global {
+  interface Window {
+    __FORCE_PRELOADERS__?: boolean;
+  }
+}
 
 
 // USER

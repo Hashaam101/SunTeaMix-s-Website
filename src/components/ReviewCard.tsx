@@ -48,6 +48,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
               width={32}
               height={32}
               className="object-cover w-full h-full"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
         )}

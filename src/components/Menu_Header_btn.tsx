@@ -78,13 +78,13 @@ export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         <motion.div
-          className="w-[24px] h-[1.75px] bg-black rounded-full"
+          className="w-[24px] h-[1.75px] bg-[#000] rounded-full"
           variants={topLineVariants}
           animate={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
         />
         <motion.div
-          className="w-[24px] h-[1.75px] bg-black rounded-full"
+          className="w-[24px] h-[1.75px] bg-[#000] rounded-full"
           variants={bottomLineVariants}
           animate={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
@@ -93,7 +93,7 @@ export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
 
       {/* Menu Items */}
       <motion.div
-        className="w-fit top-18 left-5 mt-2 absolute bg-white rounded-lg shadow-lg overflow-hidden z-100"
+        className="w-fit top-18 left-5 mt-2 absolute bg-[#fff] rounded-lg shadow-lg overflow-hidden z-100"
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}

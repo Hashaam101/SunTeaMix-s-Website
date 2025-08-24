@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PostDescription } from "./PostDescription";
+import MediaPreloader from "./MediaPreloader";
 
 interface InstagramPost {
 	id: string;
@@ -146,30 +147,25 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 								{/* Image Container */}
 								<motion.div
 									className="relative h-full overflow-hidden rounded-lg"
-									animate={{
-										height:
-											isHovered || shouldCompress
-												? "100%"
-												: "90%",
-									}}
-									transition={{
-										duration: 0.4,
-										ease: [0.4, 0, 0.2, 1],
-									}}
+												initial={{ height: "100%" }}
+												animate={{
+													height:
+														isHovered || shouldCompress
+															? "100%"
+															: "90%",
+												}}
+												transition={{
+													duration: 0.4,
+													ease: [0.4, 0, 0.2, 1],
+												}}
 								>
-									<motion.img
-										src={post.image}
-										alt={post.title}
-										className="w-full h-full object-cover rounded-lg"
-										style={{ objectPosition: isHovered ? 'cover' : 'center' }}
-										animate={{
-											scale: isHovered ? 1.1 : 1,
-										}}
-										transition={{
-											duration: 0.4,
-											ease: [0.4, 0, 0.2, 1],
-										}}
-									/>
+												<MediaPreloader
+													src={post.image}
+													alt={post.title}
+													borderRadius="0.5rem"
+													className="w-full h-full object-cover"
+													style={{ objectPosition: isHovered ? 'cover' : 'center' }}
+												/>
 
 									{/* Gradient overlay */}
 									<motion.div
@@ -186,7 +182,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 									className="absolute bottom-0 left-0 right-0 px-4 text-white z-30 w-full rounded-lg"
 									animate={{
 										opacity: shouldCompress ? 0 : 1,
-										color: isHovered ? "white" : "black",
+										color: isHovered ? "#fff" : "#000",
 										// backgroundColor: !isHovered
 										// 	? "#ffffff"
 										// 	: "transparent",
@@ -210,8 +206,10 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 										style={{}}
 									>
 										{post.title.length > 28 && !isHovered
-											? post.title.slice(0, 28) + " ..."
-											: post.title}
+														? (
+																<span className="inline-block bg-gray-300 rounded w-24 h-5 animate-pulse" />
+															)
+														: post.title}
 
 										<motion.div
 											animate={{
@@ -243,11 +241,14 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 												}}
 												hidden={!isHovered}
 											>
-												<PostDescription
-													description={
-														post.description
-													}
-												/>
+															<>
+																{/* Preloader for description */}
+																{!post.description ? (
+																	<span className="block bg-gray-200 rounded w-full h-4 animate-pulse mb-2" />
+																) : (
+																	<PostDescription description={post.description} />
+																)}
+															</>
 											</motion.p>
 										)}
 									</AnimatePresence>

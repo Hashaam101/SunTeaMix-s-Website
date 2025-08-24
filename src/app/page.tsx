@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Image from "next/image";
+import MediaPreloader from "@/components/MediaPreloader";
 
 import Hero from "@/../public/Images/hero.webp";
 
@@ -20,6 +21,7 @@ import Story from "@/components/Story";
 
 
 export default function Home() {
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   // const videoSrc = `/vids/seasons.mp4`;
   // let videoType: string | undefined;
@@ -50,7 +52,6 @@ export default function Home() {
           <div className="text-white text-normal1 sm:text-normal2 sm:font-bold border-l-3 border-white pl-[20px]">
             Serving the Best Boba & Desserts in Honolulu
           </div>
-
           <div className="text-white font-creato-black font-semibold text-[32px] sm:text-h2 lg:text-h1  sm:font-medium leading-[1.2]">
             Savor the Best
             <br />
@@ -59,18 +60,24 @@ export default function Home() {
             Pancakes Near You! ✨
             <br />
           </div>
-
-          <Image
-            src={Hero}
+          {/* Preloader for hero image */}
+          <MediaPreloader
+            src={typeof Hero === "string" ? Hero : (Hero.src ?? "")}
             alt="Home Page Image"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-[36px] -z-10"
+            onLoaded={() => setHeroLoaded(true)}
           />
-          <div className="absolute bg-black/20 top-0 left-0 w-full h-full object-cover rounded-[36px] -z-9" />
-          <div className="absolute top-0 left-0 w-full h-full object-cover rounded-[36px] -z-9"
-            style={{
-              background: "linear-gradient(59deg, rgb(13 13 13 / 30%) 20%, rgb(13 13 13 / 20%) 40%, rgb(13 13 13 / 15%) 60%, rgba(0, 0, 0, 0) 100%)"
-            }}
-          />
+          {/* Only show overlays if heroLoaded */}
+          {heroLoaded && (
+            <>
+              <div className="absolute bg-black/20 top-0 left-0 w-full h-full object-cover rounded-[36px] -z-9" />
+              <div className="absolute top-0 left-0 w-full h-full object-cover rounded-[36px] -z-9"
+                style={{
+                  background: "linear-gradient(59deg, rgb(13 13 13 / 30%) 20%, rgb(13 13 13 / 20%) 40%, rgb(13 13 13 / 15%) 60%, rgba(0, 0, 0, 0) 100%)"
+                }}
+              />
+            </>
+          )}
         </div>
       </div>
 
@@ -137,38 +144,18 @@ export default function Home() {
 
       <div className="h-[100px]" /> */}
 
-      <div className="h-[100px]" />
 
       {/* reviews */}
+      <div className="h-[100px]" />
       <div id="Reviews">
         <Reviews />
       </div>
 
-      {/* 
-      <div className="h-[100px]" />
-
-        <div className="flex items-center justify-center max-w-[350px] mx-auto">
-          <video
-            src={videoSrc}
-            controls 
-            width={"100%"}
-            style={{ maxWidth: '100%', height: 'auto' }}
-            playsInline
-          >
-            {videoType && <source src={videoSrc} type={videoType} />}
-            Your browser does not support the video tag.
-            Please <a href={videoSrc} download>download the video</a> instead.
-          </video>          
-        </div> 
-      */}
-
-
+      {/* Featuring and Story */}
       <div className="h-[100px]" />
       <div id="Featuring">
         <Featuring />
       </div>
-
-      <div className="h-[100px]" />
       <div id="Story">
         <Story />
       </div>

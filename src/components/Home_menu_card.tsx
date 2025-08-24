@@ -1,5 +1,6 @@
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Image from 'next/image';
+import MediaPreloader from './MediaPreloader';
 
 import placeholderImg from "@/../public/Images/menu.png";
 import { MenuItem } from './Home_menu_section';
@@ -80,13 +81,17 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
      }, [checkScrollPosition]);
 
 
+
     useEffect(() => {
       const container = scrollContainerRef.current;
       if (!container) return;
 
-      checkScrollPosition();
-
       container.addEventListener('scroll', handleScroll);
+
+      // Only check scroll position after mount, not during render
+      setTimeout(() => {
+        checkScrollPosition();
+      }, 0);
 
       return () => {
         container.removeEventListener('scroll', handleScroll);
@@ -149,11 +154,19 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
           >
             {/* Card Image */}
             <div className="relative h-[240px] w-full cursor-grab active:cursor-grabbing">
+              {/* Preloader overlays the image until loaded, matching shape and fill */}
+              <MediaPreloader
+                src={item.image}
+                alt={item.name}
+                className="absolute top-0 left-0 w-full h-full object-cover rounded-[12px]"
+                style={{ borderRadius: '12px' }}
+              />
               <Image 
                 src={item.image}
                 alt={item.name}
                 fill
-                className="object-cover"
+                className="object-cover rounded-[12px]"
+                style={{ borderRadius: '12px' }}
                 draggable={false}
               />
             </div>

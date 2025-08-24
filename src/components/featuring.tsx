@@ -1,22 +1,22 @@
-"use client"; // Keep this if using Next.js App Router
-
-import React from 'react'; // Import React
-import Image, { StaticImageData } from 'next/image'; // Import StaticImageData if needed for type safety
-import { motion } from 'framer-motion'; // Import motion
-
-
-// Define animation variants for consistency
+"use client";
+import React from 'react';
+import Image, { StaticImageData } from 'next/image';
+import { motion } from 'framer-motion';
+import MediaPreloader from './MediaPreloader';
+// Animation variants for framer-motion
 const sectionVariants = {
-  hidden: { opacity: 0, y: 50 }, // Start hidden, slightly below final position
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6, // Animation duration
-      ease: "easeOut" // Animation easing
+      duration: 0.6,
+      ease: "easeOut"
     }
   }
 };
+
+
 
 function Featuring() {
 
@@ -81,12 +81,20 @@ function Featuring() {
         variants={sectionVariants}
       >
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
-          <Image
-            src="Images/hero.webp"
-            alt="Best Bubble Tea & Boba Drinks in Honolulu"
-            width={540} height={540} priority // Add priority if visible early
-            className='aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
-          />
+          <div className='relative aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
+            <MediaPreloader
+              src="Images/hero.webp"
+              alt="Best Bubble Tea & Boba Drinks in Honolulu"
+              borderRadius="24px"
+              className='w-full h-full object-cover'
+            />
+            <Image
+              src="Images/hero.webp"
+              alt="Best Bubble Tea & Boba Drinks in Honolulu"
+              width={540} height={540} priority
+              className='w-full h-full object-cover rounded-[24px]'
+            />
+          </div>
           <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:ml-5'>
             <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
               Bubble Tea & Boba Drinks
@@ -108,13 +116,20 @@ function Featuring() {
       >
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           {/* Image shown first on mobile */}
-          <Image
-            src="Images/hero.webp"
-            alt="Best Soufflé Pancakes in Honolulu, Hawaii."
-            width={540} height={540}
-            className='block lg:hidden aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
-
-          />
+          <div className='relative block lg:hidden aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
+            <MediaPreloader
+              src="Images/hero.webp"
+              alt="Best Soufflé Pancakes in Honolulu, Hawaii."
+              borderRadius="24px"
+              className='w-full h-full object-cover'
+            />
+            <Image
+              src="Images/hero.webp"
+              alt="Best Soufflé Pancakes in Honolulu, Hawaii."
+              width={540} height={540}
+              className='w-full h-full object-cover rounded-[24px]'
+            />
+          </div>
           <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:mr-5'>
             <div className='self-stretch text-h3 xl:text-h2 lg:text-h2 text-black text-center lg:text-left'>
               Soufflé Pancakes
@@ -123,13 +138,20 @@ function Featuring() {
               Light, jiggly, and photogenic — our signature dessert in Honolulu and on Oahu.
             </div>
           </div>
-          <Image
-            src="Images/hero.webp"
-            alt="Best Soufflé Pancakes in Honolulu, Hawaii."
-            width={540} height={540}
-            className='hidden lg:block aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
-
-          />
+          <div className='relative hidden lg:block aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
+            <MediaPreloader
+              src="Images/hero.webp"
+              alt="Best Soufflé Pancakes in Honolulu, Hawaii."
+              borderRadius="24px"
+              className='w-full h-full object-cover'
+            />
+            <Image
+              src="Images/hero.webp"
+              alt="Best Soufflé Pancakes in Honolulu, Hawaii."
+              width={540} height={540}
+              className='w-full h-full object-cover rounded-[24px]'
+            />
+          </div>
         </div>
       </motion.div>
 
@@ -142,12 +164,20 @@ function Featuring() {
         variants={sectionVariants}
       >
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
-          <Image
-            src="Images/hero.webp"
-            alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
-            width={540} height={540} priority
-            className='aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'
-          />
+          <div className='relative aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
+            <MediaPreloader
+              src="Images/hero.webp"
+              alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
+              borderRadius="24px"
+              className='w-full h-full object-cover'
+            />
+            <Image
+              src="Images/hero.webp"
+              alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
+              width={540} height={540} priority
+              className='w-full h-full object-cover rounded-[24px]'
+            />
+          </div>
           <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:ml-5'>
             <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
               Smoothies & Yogurt Blends

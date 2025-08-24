@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PostDescription } from "./PostDescription";
+import MediaPreloader from "./MediaPreloader";
 
 interface InstagramPost {
 	id: string;
@@ -277,26 +278,37 @@ const InstagramPostCard: React.FC<{ post: InstagramPost; height?: number }> = ({
 			style={{
 				maxWidth: "75vw",
 				minWidth: "200px",
-				height: "100%",
+				height: height ? `${height}px` : "320px",
 			}}
 		>
 			{/* Image Container */}
 			<div className="relative overflow-hidden">
-				<img
-					src={post.image}
-					alt={post.title}
-					className="w-full h-full object-cover rounded-lg"
-				/>
+						<div style={{height: height ? `${height * 0.6}px` : "192px"}}>
+							<MediaPreloader
+								src={post.image}
+								alt={post.title}
+								borderRadius="0.5rem"
+								className="w-full h-full object-cover"
+							/>
+						</div>
 			</div>
 
 			{/* Content Container */}
 			<div className="px-4 text-black z-30 w-full bg-white bg-opacity-90 py-2">
 				<div className="leading-tight w-full flex justify-between items-center">
-					<span className="text-lg font-medium">{post.title}</span>
+							{post.title ? (
+								<span className="text-lg font-medium">{post.title}</span>
+							) : (
+								<span className="inline-block bg-gray-300 rounded w-24 h-5 animate-pulse" />
+							)}
 					<InstagramIcon />
 				</div>
 
-				<PostDescription description={post.description} />
+						{post.description ? (
+							<PostDescription description={post.description} />
+						) : (
+							<span className="block bg-gray-200 rounded w-full h-4 animate-pulse mb-2" />
+						)}
 			</div>
 		</div>
 	);
