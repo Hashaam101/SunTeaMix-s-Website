@@ -30,13 +30,13 @@ function Story() {
       <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
         <div className='relative block lg:hidden aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
           <MediaPreloader
-            src="Images/hero.webp"
+            src="/Images/featuring/4.webp"
             alt="Story about the best Restaurant in Honolulu, Hawaii."
             borderRadius="24px"
             className='w-full h-full object-cover'
           />
           <Image
-            src="Images/hero.webp"
+            src="/Images/featuring/4.webp"
             alt="Story about the best Restaurant in Honolulu, Hawaii."
             width={540} height={540}
             className='w-full h-full object-cover rounded-[24px]'
@@ -59,13 +59,13 @@ function Story() {
         </div>
         <div className='relative hidden lg:block aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
           <MediaPreloader
-            src="Images/hero.webp"
+            src="/Images/featuring/4.webp"
             alt="Story about the best Restaurant in Honolulu, Hawaii."
             borderRadius="24px"
             className='w-full h-full object-cover'
           />
           <Image
-            src="Images/hero.webp"
+            src="/Images/featuring/4.webp"
             alt="Story about the best Restaurant in Honolulu, Hawaii."
             width={540} height={540}
             className='w-full h-full object-cover rounded-[24px]'

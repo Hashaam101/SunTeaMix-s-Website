@@ -85,13 +85,13 @@ function Featuring() {
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           <div className='relative aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
             <MediaPreloader
-              src="Images/hero.webp"
+              src="/Images/featuring/1.webp"
               alt="Best Bubble Tea & Boba Drinks in Honolulu"
               borderRadius="24px"
               className='w-full h-full object-cover'
             />
             <Image
-              src="Images/hero.webp"
+              src="/Images/featuring/1.webp"
               alt="Best Bubble Tea & Boba Drinks in Honolulu"
               width={540} height={540} priority
               className='w-full h-full object-cover rounded-[24px]'
@@ -120,13 +120,13 @@ function Featuring() {
           {/* Image shown first on mobile */}
           <div className='relative block lg:hidden aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
             <MediaPreloader
-              src="Images/hero.webp"
+              src="/Images/featuring/2.webp"
               alt="Best Soufflé Pancakes in Honolulu, Hawaii."
               borderRadius="24px"
               className='w-full h-full object-cover'
             />
             <Image
-              src="Images/hero.webp"
+              src="/Images/featuring/2.webp"
               alt="Best Soufflé Pancakes in Honolulu, Hawaii."
               width={540} height={540}
               className='w-full h-full object-cover rounded-[24px]'
@@ -142,13 +142,13 @@ function Featuring() {
           </div>
           <div className='relative hidden lg:block aspect-square max-w-[540px] max-h-[540px] w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
             <MediaPreloader
-              src="Images/hero.webp"
+              src="/Images/featuring/2.webp"
               alt="Best Soufflé Pancakes in Honolulu, Hawaii."
               borderRadius="24px"
               className='w-full h-full object-cover'
             />
             <Image
-              src="Images/hero.webp"
+              src="/Images/featuring/2.webp"
               alt="Best Soufflé Pancakes in Honolulu, Hawaii."
               width={540} height={540}
               className='w-full h-full object-cover rounded-[24px]'
@@ -168,13 +168,13 @@ function Featuring() {
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           <div className='relative aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
             <MediaPreloader
-              src="Images/hero.webp"
+              src="/Images/featuring/3.webp"
               alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
               borderRadius="24px"
               className='w-full h-full object-cover'
             />
             <Image
-              src="Images/hero.webp"
+              src="/Images/featuring/3.webp"
               alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
               width={540} height={540} priority
               className='w-full h-full object-cover rounded-[24px]'
