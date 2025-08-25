@@ -257,8 +257,20 @@ const Home = React.memo(function Home() {
                 <div className="flex h-full flex-col items-center justify-center">
                   <div className="text-h5 font-semibold mb-[22px]">Contact Us</div>
                   <div className="text-normal4 text-black/80">
-                    <div className="mb-[10px]">+1 (808) 219-5749</div>
-                    <div>email@email.com</div>
+                    <div className="flex flex-col items-center">
+                      <a
+                        href="tel:+18082195749"
+                        className="mb-[10px] hover:text-primary hover:underline cursor-pointer transition-colors"
+                      >
+                        +1 (808) 219-5749
+                      </a>
+                      <a
+                        href="mailto:suntea808@gmail.com"
+                        className="hover:text-primary hover:underline cursor-pointer transition-colors"
+                      >
+                        suntea808@gmail.com
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -272,22 +284,22 @@ const Home = React.memo(function Home() {
                   <div className="text-normal4 text-black/80">
                     <div className="text-center grid grid-cols-2 gap-[10px]">
                       <button onClick={() => scrollToSection('Home')} className="hover:text-primary transition-colors cursor-pointer">
-                        Home
+                        <span className="hover:underline">Home</span>
                       </button>
                       <button onClick={() => scrollToSection('Menu')} className="hover:text-primary transition-colors cursor-pointer">
-                        Menu
+                        <span className="hover:underline">Menu</span>
                       </button>
                       <button onClick={() => scrollToSection('Reviews')} className="hover:text-primary transition-colors cursor-pointer">
-                        Reviews
+                        <span className="hover:underline">Reviews</span>
                       </button>
                       <button onClick={() => scrollToSection('Featuring')} className="hover:text-primary transition-colors cursor-pointer">
-                        Featuring
+                        <span className="hover:underline">Featuring</span>
                       </button>
                       <button onClick={() => scrollToSection("FAQ's")} className="hover:text-primary transition-colors cursor-pointer">
-                        FAQ's
+                        <span className="hover:underline">FAQ's</span>
                       </button>
                       <button onClick={() => scrollToSection('Location')} className="hover:text-primary transition-colors cursor-pointer">
-                        Location
+                        <span className="hover:underline">Location</span>
                       </button>
                     </div>
                   </div>
